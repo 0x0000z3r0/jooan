@@ -1,0 +1,6 @@
+1. the C file contains the command for compiling
+2. compile the C file
+3. create and upgrade.sh script file, it will take and argument from Jooan FW, which will be your firmware file path
+4. the upgrade.sh needs to be stored in a squashfs file, only supported compression is xz. Use 'mksquashfs ./upgrade.sh ./seg_last.sqfs -comp xz'
+5. create an empty file (e.g. input_fw). This is an artifact of my laziness.
+6. use the compiled binary to produce an upgrade package. 'jooan-package input_fw seg_last.sqfs jooan.fw'. The jooan.fw will be your file for uploading.

@@ -1,0 +1,31 @@
+Hex View  00 01 02 03 04 05 06 07  08 09 0A 0B 0C 0D 0E 0F
+ 
+00040110                                                62                 b
+00040120  6F 6F 74 61 72 67 73 3D  63 6F 6E 73 6F 6C 65 3D  ootargs=console=
+00040130  6E 75 6C 6C 20 6D 65 6D  3D 34 36 30 38 30 4B 40  null mem=46080K@
+00040140  30 78 30 20 72 6D 65 6D  3D 31 39 34 35 36 4B 40  0x0 rmem=19456K@
+00040150  30 78 32 64 30 30 30 30  30 20 69 6E 69 74 3D 2F  0x2d00000 init=/
+00040160  6C 69 6E 75 78 72 63 20  72 6F 6F 74 66 73 74 79  linuxrc rootfsty
+00040170  70 65 3D 73 71 75 61 73  68 66 73 20 72 6F 6F 74  pe=squashfs root
+00040180  3D 2F 64 65 76 2F 6D 74  64 62 6C 6F 63 6B 33 20  =/dev/mtdblock3 
+00040190  72 77 20 6D 74 64 70 61  72 74 73 3D 6A 7A 5F 73  rw mtdparts=jz_s
+000401A0  66 63 3A 32 35 36 6B 28  62 6F 6F 74 29 2C 33 32  fc:256k(boot),32
+000401B0  6B 28 62 6F 6F 74 65 6E  76 29 2C 31 34 37 32 6B  k(bootenv),1472k
+000401C0  28 6B 65 72 6E 65 6C 29  2C 32 38 38 30 6B 28 72  (kernel),2880k(r
+000401D0  6F 6F 74 66 73 29 2C 33  31 33 36 6B 28 61 70 70  ootfs),3136k(app
+000401E0  66 73 29 2C 33 38 34 6B  28 63 6F 6E 66 69 67 29  fs),384k(config)
+000401F0  2C 33 32 6B 28 63 6F 6E  66 62 61 6B 29 20 6A 61  ,32k(confbak) ja
+00040200  5F 76 65 72 73 69 6F 6E  3D 30 31 2E 32 33 4E 2E  _version=01.23N.
+00040210  32 30 32 33 31 32 32 38  2E 31 39 20 48 57 55 62  20231228.19 HWUb
+00040220  6F 6F 74 47 70 69 6F 53  65 74 3D 36 30 28 30 29  ootGpioSet=60(0)
+00040230  20 43 70 75 54 79 70 65  3D 54 32 33 4E 20 48 57   CpuType=T23N HW
+00040240  4B 65 72 6E 65 6C 47 70  69 6F 3D 36 31 28 53 64  KernelGpio=61(Sd
+00040250  43 64 29 20 53 44 4B 4D  65 6D 3D 31 39 34 35 36  Cd) SDKMem=19456
+
+================================ PATCH =================================
+
+bootargs=console=null mem=46080K@0x0 rmem=19456K@0x2d00000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock3 rw mtdparts=jz_sfc:256k(boot),32k(bootenv),1472k(kernel),2880k(rootfs),3136k(appfs),384k(config),32k(confbak) ja_version=01.23N.20231228.19 HWUbootGpioSet=60(0) CpuType=T23N HWKernelGpio=61(SdCd) SDKMem=19456
+
+->
+
+bootargs=console=ttyS1 mem=46080K@0x0 rmem=19456K@0x2d00000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock3 rw mtdparts=jz_sfc:256k(boot),32k(bootenv),1472k(kernel),2880k(rootfs),3136k(appfs),384k(config),32k(confbak) ja_version=01.23N.20231228.1 HWUbootGpioSet=60(0) CpuType=T23N HWKernelGpio=61(SdCd) SDKMem=19456

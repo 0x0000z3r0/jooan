@@ -1,0 +1,37 @@
+// strcmp 1 (0xB9E90)
+
+.text:004B9E90: 01 00 56 2C  -> sltiu   $s6, $v0, 1
+
+===>
+
+.text:004B9E90: 00 00 56 2C  -> sltiu   $s6, $v0, 0
+		             -> addi $s6 $zero 0x0001 -> 0x20160001 -> 01 00 16 20
+
+
+// strcmp 2 (0xB9F68)
+
+.text:004B9F68: 01 00 52 2C  -> sltiu   $s2, $v0, 1
+
+===>
+
+.text:004B9F68: 00 00 52 2C  -> sltiu   $s2, $v0, 0
+                             -> addi $s2 $zero 0x0001 -> 0x20120001 -> 01 00 12 20
+
+
+// will 1 (0xB9ECC)
+
+.text:004B9ECC D8 69 02 8E   -> lw $v0, (glb_will - 0x968B60)($s0)
+
+===>
+
+0x20020001 -> 01 00 02 20 -> addi $v0, $zero, 0x1
+
+
+// will 2 (0xB9FA4)
+
+.text:004B9FA4 D8 69 02 8E   -> lw $v0, (glb_will - 0x968B60)($s0)
+
+===>
+
+0x20020001 -> 00 00 02 20 -> addi $v0, $zero, 0x0 
+
